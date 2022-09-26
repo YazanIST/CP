@@ -16,6 +16,9 @@
 - add Treaps (blackbox)
 - add josuphus recurrences (also indexed set solution)
 - add decending the tree to the segtree code
+- add MOs algo
+- add segtree with lazy
+- add sqrt decomposition
 
 * to learn:
     Second Min spanning tree (LCA solution)
