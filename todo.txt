@@ -15,7 +15,7 @@
 - add bridges and articulation points finders
 - add Treaps (blackbox)
 - add josuphus recurrences (also indexed set solution)
-
+- add decending the tree to the segtree code
 
 * to learn:
     Second Min spanning tree (LCA solution)
