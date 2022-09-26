@@ -1,0 +1,17 @@
+- meet in the middle (well just general concept)
+- things to remember (general notes)
+- BigInt lib (maybe not cuz gfg - config a lil)
+- edit TRIEBITS and Dijkstra to be more general
+- make my own sparse table
+- add mCn without extra calc
+- add STRING mod INT function might help
+- Integral lib maybe (for nums under mod) (nero lib is good)
+- add fenwick code
+- add sieve
+- add some geometry lib (with function to check if point inside rechatngel cuz helpful)
+- add 2D cumulative sum code (cuz it can get messy)
+- grid things (dx, dy, etc)
+- add DSU (cp4 UF is good)
+
+* to learn:
+    Second Min spanning tree (LCA solution)
