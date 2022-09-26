@@ -13,6 +13,11 @@
 - grid things (dx, dy, etc)
 - add DSU (cp4 UF is good)
 - add bridges and articulation points finders
+- add Treaps (blackbox)
+- add josuphus recurrences (also indexed set solution)
+
 
 * to learn:
     Second Min spanning tree (LCA solution)
+    learn about Treaps
+    learn about red-black trees, splay trees, interval trees, quad trees (general knowledge)
