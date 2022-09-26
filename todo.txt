@@ -19,6 +19,8 @@
 - add MOs algo
 - add segtree with lazy
 - add sqrt decomposition
+- add LCA and Kth
+- add euler tour
 
 * to learn:
     Second Min spanning tree (LCA solution)
