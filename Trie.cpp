@@ -2,7 +2,7 @@ class Trie {
 private:
     struct Node {
         char alphabet;
-        bool exist;
+        bool exist; // or end of word, or count of words
         vector<Node*> child;
         Node(char a): alphabet(a), exist(false) {
             child.assign(26, NULL);
