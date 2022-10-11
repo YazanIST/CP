@@ -67,7 +67,7 @@ public:
     
     SegmentTree(int n) {
         this->n = n;
-        seg.resize(n);
+        seg.resize(n * 4);
     }
 
     void update(int idx, int val) {
