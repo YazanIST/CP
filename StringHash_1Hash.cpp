@@ -21,7 +21,7 @@ int power(int x, int p) {
             ret = mul(ret, x);
         }
         p /= 2;
-        x=mul(x, x);
+        x = mul(x, x);
     }
     return ret;
 }
