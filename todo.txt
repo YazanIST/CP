@@ -8,7 +8,7 @@
 - Integral lib maybe (for nums under mod) (nero lib is good)
 - add fenwick code
 - add sieve
-- add some geometry lib (with function to check if point inside rechatngel cuz helpful)
+- add some geometry lib (with function to check if point inside rectangle cuz helpful)
 - add 2D cumulative sum code (cuz it can get messy)
 - grid things (dx, dy, etc)
 - add DSU (cp4 UF is good)
@@ -17,9 +17,7 @@
 - add josuphus recurrences (also indexed set solution)
 - add decending the tree to the segtree code
 - add MOs algo
-- add segtree with lazy
 - add sqrt decomposition
-- add LCA and Kth
 - add euler tour
 
 * to learn:
