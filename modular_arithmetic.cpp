@@ -16,7 +16,7 @@ inline int sub(int a, int b) {
 }
 
 inline int mul(int a, int b) {
-    return (ll)a * b % MOD;
+    return (ll) a * b % MOD;
 }
 
 int power(int x, int p) {

@@ -58,6 +58,7 @@ public:
     }
 
     void dfsHld(int u, int p) {
+        // NOTE: dont use static for multiple testcases, use an atribute id
         static int id = 0;
         rev[id] = u;
         dfn[u] = id++;

@@ -20,8 +20,8 @@ class Dijkistra{
 
             if (vw != dis[v]) continue;
 
-            for (auto &[w,u]: adj[v]) {
-                if( w + dis[v] < dis[u]) {
+            for (auto &[w, u]: adj[v]) {
+                if(w + dis[v] < dis[u]) {
                     dis[u] = dis[v] + w;
                     pq.push({dis[u], u});
                 }
