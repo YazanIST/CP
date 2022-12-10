@@ -1,4 +1,4 @@
-// Factiring log(n)
+// Factorizing in log(n)
 const int N = 10;
 int spf[N];
 
