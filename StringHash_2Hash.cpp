@@ -61,8 +61,8 @@ vector<pair<int,int>> calcHash(const string&s) {
         if (i > 0) {
             ret[i] = ret[i - 1];
         }
-        ret[i].first = add(ret[i - 1].first, mul(s[i], powersMOD1[i], MOD1), MOD1);
-        ret[i].second = add(ret[i - 1].second, mul(s[i], powersMOD2[i], MOD2), MOD2);
+        ret[i].first = add(ret[i].first, mul(s[i], powersMOD1[i], MOD1), MOD1);
+        ret[i].second = add(ret[i].second, mul(s[i], powersMOD2[i], MOD2), MOD2);
     }
     return ret;
 } 
