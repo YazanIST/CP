@@ -22,6 +22,17 @@ struct Matrix {
         return ret;
     }
 
+    Matrix operator+(Matrix other) {
+        assert(n == other.n && m == other.m);
+        Matrix ret(n, m);
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                ret.mat[i][j] = add(mat[i][j], other.mat[i][j]);
+            }
+        }
+        return ret;
+    }
+
     Matrix power(ll p) {
         Matrix ret(n, m), base(mat);
         for (int i = 0; i < n; i++) {
