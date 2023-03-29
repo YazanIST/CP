@@ -1,75 +1,73 @@
-#include "bits/stdc++.h"
-using namespace std;
-typedef long long ll;
-
-// Taken from problem so u gotta edit
-class TRIEBITS {
-    struct Node {
-        bool bit;
-        int count;
-        vector<Node *> child;
-        Node(bool a) : bit(a), count(0) {
-            child.assign(2, NULL);
-        }
-    };
-
-    class Trie {
-    private:
-        Node *root;
-
-        int getAns(int p, int l, int dep, Node *curNode) {
-            if (curNode == NULL) {
-                return 0;
+const int INT_SIZE = 30;
+ 
+struct Node {
+    int cnt;
+    vector<Node *> child;
+    Node() {
+        cnt = 0;
+        child.assign(2, NULL);
+    }
+};
+ 
+class Trie {
+private:
+    Node *root;
+ 
+public:
+    Trie() {
+        root = new Node();
+    }
+ 
+    void insert(int p) {
+        Node *cur = root;
+        for (int i = INT_SIZE - 1; i >= 0; i--) {
+            bool curBit = (1 << i) & p;
+            if (!cur->child[curBit]) {
+                cur->child[curBit] = new Node();
             }
+            cur = cur->child[curBit];
+            cur->cnt++;
+        }
+    }
 
-            bool curBit = bool(((1 << dep) & p)) ^ curNode->bit;
-
-            if (curBit) {
-                if ((1 << dep) & l) {
-                    return getAns(p, l, dep - 1, curNode->child[0]) +
-                            getAns(p, l, dep - 1, curNode->child[1]);
-                } else {
-                    return 0;
-                }
+    void remove(int p) {
+        Node *cur = root;
+        for (int i = INT_SIZE - 1; i >= 0; i--) {
+            bool curBit = (1 << i) & p;
+            cur = cur->child[curBit];
+            cur->cnt--;
+        }
+    }
+ 
+    int searchMinXor(int x) {
+        int ret = 0;
+        Node *cur = root;
+        for (int i = INT_SIZE - 1; i >= 0; i--) {
+            bool curBit = (1 << i) & x;
+            if (cur->child[curBit] && cur->child[curBit]->cnt > 0) {
+                ret = (ret << 1);
+                cur = cur->child[curBit];
             } else {
-                if ((1 << dep) & l) {
-                    return curNode->count;
-                } else {
-                    return getAns(p, l, dep - 1, curNode->child[0]) +
-                        getAns(p, l, dep - 1, curNode->child[1]);
-                }
+                ret = (ret << 1) | 1;
+                cur = cur->child[!curBit];
             }
         }
+        return ret;
+    }
 
-    public:
-        Trie() {
-            root = new Node(false);
-        }
-
-        void insert(int p) {
-            Node *cur = root;
-            for (int i = 27; i >= 0; i--) {
-                bool curBit = (1 << i) & p;
-                if (cur->child[curBit] == NULL) {
-                    cur->child[curBit] = new Node(curBit);
-                }
+    int searchMaxXor(int x) {
+        int ret = 0;
+        Node *cur = root;
+        for (int i = INT_SIZE - 1; i >= 0; i--) {
+            bool curBit = (1 << i) & x;
+            if (cur->child[!curBit]) {
+                ret = (ret << 1) | 1;
+                cur = cur->child[!curBit];
+            } else {
+                ret = (ret << 1);
                 cur = cur->child[curBit];
-                cur->count++;
             }
         }
-
-        void remove(int p) {
-            Node *cur = root;
-            for (int i = 27; i >= 0; i--) {
-                bool curBit = (1 << i) & p;
-                cur = cur->child[curBit];
-                cur->count--;
-            }
-        }
-
-        int getAns(int p, int l) {
-            Node *newRoot = root;
-            return getAns(p, l, 28, newRoot);
-        }
-    };
+        return ret;
+    }
 };
