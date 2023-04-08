@@ -48,9 +48,9 @@ vector<int> calcHash(const string &s) {
     vector<int>ret(s.size());
     for (int i = 0; i < (int) s.size(); i++) {
         if (i) {
-            ret[i] = ret[i-1];
+            ret[i] = ret[i - 1];
         }
-        ret[i] = add(ret[i-1], mul(s[i], powers[i]));
+        ret[i] = add(ret[i], mul(s[i], powers[i]));
     }
     return ret;
 }
@@ -59,5 +59,5 @@ int getHash(const vector<int> &hash, int l, int r){
     if (l == 0) {
         return hash[r];
     }
-    return mul(sub(hash[r], hash[l-1]), powersInv[l]);
+    return mul(sub(hash[r], hash[l - 1]), powersInv[l]);
 }
